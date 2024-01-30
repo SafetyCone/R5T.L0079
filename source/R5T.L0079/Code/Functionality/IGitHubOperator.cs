@@ -14,7 +14,7 @@ namespace R5T.L0079
         /// <summary>
         /// Creates a repository, but will fail if the repository already exists (non-idempotent in that it does not check if the repository already exists before calling a non-idempotent operation).
         /// </summary>
-        /// <exception cref="RepositoryExistsException">Thron if the repository identified by organization\name already exists.</exception>
+        /// <exception cref="RepositoryExistsException">Thrown if the repository identified by organization\name already exists.</exception>
         public async Task<Repository> Create_Repository_NonIdempotent(
             GitHubClient gitHubClient,
             RepositorySpecification repositorySpecification)
@@ -48,13 +48,6 @@ namespace R5T.L0079
             await Task.Delay(3000);
 
             return createdRepository;
-        }
-
-        public async Task Delete_Repository(
-            GitHubClient gitHubClient,
-            Repository repository)
-        {
-            await gitHubClient.Repository.Delete(repository.Id);
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 
 using R5T.L0078.T000;
@@ -40,10 +41,11 @@ namespace R5T.L0079
                 context.RepositorySpecification);
         }
 
+        [Obsolete("See R5T.L0081.O002.IGitHubClientContextOperations.Delete_Repository()")]
         public async Task Delete_Repository<TContext>(TContext context)
             where TContext : IHasGitHubClient, IHasRepository
         {
-            await Instances.GitHubOperator.Delete_Repository(
+            await Instances.GitHubClientOperator.Delete_Repository_NonIdempotent(
                 context.GitHubClient,
                 context.Repository);
         }
