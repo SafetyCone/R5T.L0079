@@ -1,12 +1,12 @@
 ﻿using System;
 
-using R5T.T0142;
+using R5T.T0240;
 
 
 namespace R5T.L0079
 {
-    [DataTypeMarker]
-    public interface IHasRepositorySpecification
+    [HasXMarker]
+    public interface IHasRepositorySpecification : IHasXMarker
     {
         RepositorySpecification RepositorySpecification { get; }
     }
