@@ -1,6 +1,7 @@
 using System;
 
 using R5T.T0131;
+using R5T.T0143;
 
 
 namespace R5T.L0079.Z100
@@ -12,7 +13,10 @@ namespace R5T.L0079.Z100
     public partial interface INames : IValuesMarker
     {
 #pragma warning disable IDE1006 // Naming Styles
+
+        [Ignore]
         public Raw.INames _Raw => Raw.Names.Instance;
+
 #pragma warning restore IDE1006 // Naming Styles
 
         /// <summary>
